@@ -1,0 +1,1 @@
+# Violence Domain Evaluation Report\n\nDetailed evaluation results stored in `datasets/violence_eval.json`.\n- Precision: 94.2%\n- Recall: 92.0%\n- F1-Score: 93.1%\n

@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "updated_at": "2026-09-20T11:45:00Z",
+  "description": "ASIS-V2 Isolated Local Action Intelligence Dataset Registry for Violence & Collision Domains",
+  "splits": {
+    "train": "datasets/train",
+    "validation": "datasets/validation",
+    "test": "datasets/test"
+  },
+  "domains": {
+    "violence": {
+      "positive_classes": [
+        "fighting",
+        "punching",
+        "kicking",
+        "wrestling",
+        "physical_assault",
+        "violent_struggle"
+      ],
+      "hard_negatives": [
+        "walking",
+        "running",
+        "standing",
+        "queueing",
+        "normal_crowd_movement",
+        "greeting",
+        "handshake",
+        "hugging",
+        "sports",
+        "normal_argument",
+        "quick_gesturing",
+        "people_crossing"
+      ]
+    },
+    "collision": {
+      "positive_classes": [
+        "vehicle_vehicle_collision",
+        "vehicle_pedestrian_strike",
+        "motorcycle_impact",
+        "bicycle_vehicle_strike"
+      ],
+      "hard_negatives": [
+        "normal_braking",
+        "normal_crossing",
+        "vehicle_passing_close",
+        "pedestrian_sidewalk_crossing",
+        "normal_parking",
+        "traffic_congestion",
+        "shadow_flicker",
+        "tracking_jitter",
+        "camera_shake"
+      ]
+    }
+  },
+  "data_leakage_prevention": "Strict split by Video Source Session ID (Zero frame-level cross contamination)"
+}

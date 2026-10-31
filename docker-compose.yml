@@ -1,0 +1,86 @@
+services:
+  db:
+    image: postgres:15
+    container_name: asis_db
+    environment:
+      POSTGRES_USER: asis_user
+      POSTGRES_PASSWORD: asis_password
+      POSTGRES_DB: asis_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: asis_redis
+    ports:
+      - "6380:6379"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: asis_backend
+    environment:
+      - DATABASE_URL=postgresql://asis_user:asis_password@db:5432/asis_db
+      - REDIS_URL=redis://redis:6379/0
+      - STORAGE_PATH=/app/data/videos
+      - PYTHONPATH=/app/app
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend:/app
+      - asis_videos:/app/data/videos
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  ai-worker:
+    build:
+      context: ./ai_worker
+      dockerfile: Dockerfile
+    container_name: asis_ai_worker
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - YOLO_MODELS_DIR=/app/models
+    volumes:
+      - ./ai_worker:/app
+      - ./models:/app/models
+      - asis_videos:/app/data/videos # Needs access to uploaded videos
+    depends_on:
+      - redis
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: python src/main.py
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: asis_frontend
+    ports:
+      - "4000:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=http://localhost:8001/api
+
+volumes:
+  postgres_data:
+  asis_videos:

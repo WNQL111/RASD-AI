@@ -1,0 +1,7 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics==8.0.200
+opencv-python-headless==4.8.1.78
+redis==5.0.1
+pydantic==2.4.2

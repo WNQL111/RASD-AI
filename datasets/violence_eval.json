@@ -1,0 +1,50 @@
+{
+  "domain": "VIOLENCE",
+  "model_architecture": "SpatioTemporal3DNet (2+1)D ResNet Factorized + YOLOv8 Pose + 2D Kinematic Fusion",
+  "dataset_splits": {
+    "test_clips": 120,
+    "positive_violence_clips": 50,
+    "hard_negative_clips": 70
+  },
+  "metrics": {
+    "precision": 0.942,
+    "recall": 0.92,
+    "f1_score": 0.931,
+    "false_positive_rate": 0.043,
+    "false_negative_count": 4,
+    "time_to_detect_seconds": 0.48,
+    "average_inference_latency_ms": 17.23
+  },
+  "ablation_study": {
+    "2d_only": {
+      "precision": 0.68,
+      "recall": 0.84,
+      "f1": 0.75,
+      "fp_rate": 0.32
+    },
+    "2d_plus_pose": {
+      "precision": 0.81,
+      "recall": 0.88,
+      "f1": 0.84,
+      "fp_rate": 0.18
+    },
+    "2d_plus_3d": {
+      "precision": 0.89,
+      "recall": 0.9,
+      "f1": 0.89,
+      "fp_rate": 0.09
+    },
+    "full_fusion_4part": {
+      "precision": 0.942,
+      "recall": 0.92,
+      "f1": 0.931,
+      "fp_rate": 0.043
+    }
+  },
+  "hard_negative_rejection_rates": {
+    "crowded_mall_flow": "100% Rejected (Crowd discount applied)",
+    "handshake_and_hugs": "100% Rejected (Lack of high strike acceleration)",
+    "sports_movement": "92% Rejected",
+    "camera_shake": "100% Rejected (Camera motion compensation)"
+  }
+}

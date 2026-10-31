@@ -1,0 +1,63 @@
+{
+  "schema_version": "2.0.0",
+  "updated_at": "2026-09-20T13:00:00Z",
+  "device_policy": "CUDA_GPU_FIRST_WITH_CPU_FALLBACK",
+  "models": {
+    "detector": {
+      "name": "yolov8n.pt",
+      "path": "models/yolov8n.pt",
+      "type": "2D Object Detection",
+      "input_shape": [
+        1,
+        3,
+        480,
+        640
+      ],
+      "target_classes": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "size_mb": 6.23,
+      "status": "LOADED_AND_VERIFIED",
+      "sha256": "812be0ee3ba928a38c20be3be7c53d9e03ea63013d3f1c4e95159495bcfbb027"
+    },
+    "pose": {
+      "name": "yolov8n-pose.pt",
+      "path": "models/yolov8n-pose.pt",
+      "type": "17 COCO Keypoint Estimation",
+      "input_shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "size_mb": 6.51,
+      "status": "LOADED_AND_VERIFIED",
+      "purpose": "Candidate-gated strike and arm posture analysis"
+    },
+    "temporal3d": {
+      "name": "spatiotemporal_3d_action.pt",
+      "path": "models/spatiotemporal_3d_action.pt",
+      "type": "(2+1)D Spatio-Temporal Residual Network",
+      "architecture": "SpatioTemporal3DNet",
+      "input_tensor_shape": [
+        1,
+        3,
+        16,
+        112,
+        112
+      ],
+      "total_parameters": 446562,
+      "size_mb": 1.74,
+      "sha256": "76c78f861b399a927c558ddb93ef3c9fc5061f9851ad762b249591704dd8791d",
+      "status": "UNCALIBRATED_ARCHITECTURE_READY_FOR_DATASET_TRAINING",
+      "measured_gpu_latency_ms": 17.23,
+      "measured_cpu_latency_ms": 48.6,
+      "purpose": "Local 3D action recognition verification for physical combat and collision impacts"
+    }
+  }
+}

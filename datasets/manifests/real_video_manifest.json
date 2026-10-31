@@ -1,0 +1,23 @@
+{
+  "name": "mall_waking",
+  "filename": "20260620_174904_mall_waking.mp4",
+  "path": "E:\\final project\\AI Security Platform V2\\20260620_174904_mall_waking.mp4",
+  "sha256": "2693f57e1295286b5c2f499c3292645c4f8e3dc5ff311474cec06d4f73871a86",
+  "purpose": "real_world_validation_and_false_positive_stress_test",
+  "label_status": "negative_normal_walking_crowd",
+  "operator_expectation": "NORMAL_PEDESTRIAN_CORRIDOR",
+  "domains": {
+    "violence": "NEGATIVE_VALIDATION (Normal walking, crowds, passing each other)",
+    "collision": "NOT_APPLICABLE (Indoor mall, zero motor vehicles)"
+  },
+  "technical_metadata": {
+    "width": 576,
+    "height": 1024,
+    "fps": 29.76,
+    "total_frames": 3443,
+    "duration_seconds": 115.7,
+    "codec": "h264",
+    "pixel_format": "yuv420p"
+  },
+  "notes": "Used as the benchmark reference for false-positive stress testing and candidate-gated 3D verification evaluation."
+}

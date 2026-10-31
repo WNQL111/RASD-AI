@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-brand: #707FF0;
+  --color-purple-dark: #3935A8;
+  --color-purple-deep: #25235F;
+  --color-blue-light: #8BA8FF;
+  --color-cyan-tech: #45C5F5;
+  --color-blue-pale: #B9C8FF;
+
+  --color-bg-primary: #020618;
+  --color-bg-secondary: #0A1023;
+  --color-bg-card: #0F172A;
+  --color-bg-elevated: #151F33;
+  --color-bg-input: #1D293D;
+  --color-border-main: #26344A;
+
+  --color-text-title: #F8FAFC;
+  --color-text-main: #D7E0EE;
+  --color-text-secondary: #96A8C0;
+  --color-text-muted: #71829B;
+  --color-text-disabled: #526178;
+  --color-icon-inactive: #A6B6D0;
+
+  --color-alert-critical: #F02050;
+  --color-alert-critical-dark: #B91C3B;
+  --color-alert-critical-bg: #2A1020;
+
+  --color-alert-warning: #F59E0B;
+  --color-alert-warning-gold: #C09020;
+  --color-alert-warning-bg: #2A2110;
+
+  --color-alert-success: #00D090;
+  --color-alert-success-dark: #087F5B;
+  --color-alert-success-bg: #0B2825;
+
+  --color-alert-info: #4299F5;
+  --color-alert-info-bg: #10223B;
+}
+
+:root {
+  /* 1. الألوان الأساسية والخلفيات */
+  --bg-primary: #020618;
+  --bg-secondary: #0A1023;
+  --bg-card: #0F172A;
+  --bg-elevated: #151F33;
+  --bg-input: #1D293D;
+  --border-main: #26344A;
+
+  /* 2. ألوان الهوية والأزرق والبنفسجي */
+  --primary-brand: #707FF0;
+  --purple-dark: #3935A8;
+  --purple-deep: #25235F;
+  --blue-light: #8BA8FF;
+  --cyan-tech: #45C5F5;
+  --blue-pale: #B9C8FF;
+
+  /* 3. ألوان التنبيهات الأمنية */
+  --alert-critical: #F02050;
+  --alert-critical-dark: #B91C3B;
+  --alert-critical-bg: #2A1020;
+
+  /* 4. ألوان التحذير والانتباه */
+  --alert-warning: #F59E0B;
+  --alert-warning-gold: #C09020;
+  --alert-warning-bg: #2A2110;
+
+  /* 5. ألوان التشغيل والنجاح */
+  --alert-success: #00D090;
+  --alert-success-dark: #087F5B;
+  --alert-success-bg: #0B2825;
+
+  /* 6. ألوان المعلومات والبيانات التقنية */
+  --alert-info: #4299F5;
+  --alert-info-bg: #10223B;
+
+  /* 7. ألوان النصوص */
+  --text-title: #F8FAFC;
+  --text-main: #D7E0EE;
+  --text-secondary: #96A8C0;
+  --text-muted: #71829B;
+  --text-disabled: #526178;
+  --icon-inactive: #A6B6D0;
+}
+
+@layer base {
+  body {
+    background-color: #020618;
+    color: #D7E0EE;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Polished Dark-Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1023;
+}
+::-webkit-scrollbar-thumb {
+  background: #26344A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #707FF0;
+}

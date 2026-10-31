@@ -1,0 +1,1 @@
+# Collision Domain Evaluation Report\n\nDetailed evaluation results stored in `datasets/collision_eval.json`.\n- Precision: 95.5%\n- Recall: 93.3%\n- F1-Score: 94.4%\n

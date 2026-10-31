@@ -1,0 +1,112 @@
+# ==============================================================================
+# RASD AI (رَصْد AI) — Comprehensive .gitignore for GitHub Repository
+# ==============================================================================
+
+# --- Python & Environments ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Node.js & Frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+frontend/dist/
+frontend/.vite/
+frontend/.vite-temp/
+dist/
+.cache/
+
+# --- Databases & Runtime Caches ---
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+asis_v2.db
+backend/asis_v2.db
+backend/app/asis_v2.db
+
+# --- Runtime Uploaded Videos & Evidence Slices (Keep empty folder with .gitkeep) ---
+backend/data/videos/*.mp4
+backend/data/videos/*.avi
+backend/data/videos/*.mkv
+ai_worker/data/videos/*.mp4
+ai_worker/data/videos/*.avi
+ai_worker/data/videos/*.mkv
+!backend/data/videos/.gitkeep
+!ai_worker/data/videos/.gitkeep
+
+# --- PyTorch / Torchvision Cache ---
+.torch/
+.cache/torch/
+
+# --- Testing & Quality Assurance ---
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# --- IDEs & Editors ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# --- Operating System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Local Logs & Secrets ---
+*.log
+logs/
+.env
+.env.local
+.env.*.local
+*.tmp
+*.bak

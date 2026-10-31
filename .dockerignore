@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+.venv
+.pytest_cache
+
+# Node
+node_modules
+dist
+.vite
+
+# Database & runtime files
+*.sqlite
+*.sqlite3
+*.db
+asis_v2.db
+
+# OS
+.DS_Store
+Thumbs.db
